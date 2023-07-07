@@ -1,0 +1,37 @@
+[
+    {
+        "id":"01",
+        "name":"All Categories"
+
+    },
+    {
+        "id":"02",
+        "name":"Health & BEauty"
+   
+    },
+    {
+        "id":"03",
+        "name":"Men's & Boy's Fashion"
+    },
+    {
+        "id":"04",
+        "name":"Electronic Device"
+    },
+    {
+        "id":"05",
+        "name":"Sports & Outdoor"
+    },
+    {
+        "id":"06",
+        "name":"Heome & Lifestyle"
+    },
+    {
+        "id":"07",
+        "name":"Groceries"
+    },
+    {
+        "id":"08",
+        "name":"Girl's Fashion "
+    }
+   
+]
