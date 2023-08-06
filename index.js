@@ -126,8 +126,28 @@ async function run() {
     });
 
 
+// get only the admin from DB
+    app.get('/users/admin/:email',async(req,res)=>{
+      const email=req.params.email;
+      const query={email};
+      const user=await usersCollection.findOne(query);
+      res.send({isAdmin: user?.role=='admin'})
+
+
+    })
+
+
+
     // update a user role
-    app.put('/users/admin/:id',async(req,res)=>{
+    app.put('/users/admin/:id',verifyJWT,async(req,res)=>{
+    
+      const decodedEmail=req.decoded.email;
+      const query={email:decodedEmail};
+      const user=await usersCollection.findOne(query);
+      if(user?.role!=='admin'){
+        return res.status(403).send({message:"forbidden access"})
+      }
+// api main part for action 
       const id=req.params.id;
       const filter={_id:new ObjectId(id)};
       const options = { upsert: true };
